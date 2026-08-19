@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Emerald "hero stat" card used for total stock value / revenue -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/ink" />
+    <corners android:radius="@dimen/radius_card" />
+</shape>

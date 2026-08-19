@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="72dp"
+            android:background="@color/surface"
+            app:contentInsetStart="@dimen/space_l"
+            app:titleTextAppearance="@style/Text.Display" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hairline_width"
+            android:background="@color/hairline" />
+
+        <!-- Low stock banner -->
+        <LinearLayout
+            android:id="@+id/text_low_stock_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_banner_warning"
+            android:paddingHorizontal="@dimen/space_l"
+            android:paddingVertical="@dimen/space_m"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="@dimen/space_s"
+                android:contentDescription="@string/content_desc_low_stock_icon"
+                android:src="@drawable/ic_warning" />
+
+            <TextView
+                android:id="@+id/text_low_stock_banner_label"
+                style="@style/Text.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/status_low"
+                android:fontFamily="sans-serif-medium"
+                tools:text="3 products are low on stock — tap to review" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_chevron_right" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_products"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="88dp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/space_l"
+        android:backgroundTint="@color/brand_emerald"
+        android:contentDescription="@string/content_desc_add_product"
+        app:srcCompat="@drawable/ic_add" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

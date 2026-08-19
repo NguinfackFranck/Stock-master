@@ -1,0 +1,145 @@
+<resources>
+
+
+    <!-- Navigation strings -->
+
+    <!-- Product list -->
+    <string name="add_product_title">Add Product</string>
+    <string name="edit_product_title">Edit Product</string>
+    <string name="delete_product_title">Delete product?</string>
+    <string name="delete_product_message_format">Delete \"%1$s\"? This cannot be undone.</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="product_deleted">Product deleted</string>
+    <string name="product_added">Product added</string>
+    <string name="product_updated">Product updated</string>
+    <string name="low_stock_banner_format">%1$d products are low on stock — tap to review</string>
+    <string name="price_not_set">Price not set</string>
+    <string name="quantity_format">%1$d units</string>
+    <string name="action_search">Search</string>
+    <string name="sort_by_name">Sort by name</string>
+    <string name="sort_by_price">Sort by price</string>
+    <string name="toggle_sort_direction">Toggle sort direction</string>
+
+    <!-- Add/edit product form -->
+    <string name="hint_product_name">Product name</string>
+    <string name="hint_category">Category</string>
+    <string name="hint_unit">Unit (kg, units, carton…)</string>
+    <string name="hint_price">Price</string>
+    <string name="hint_threshold">Low-stock threshold</string>
+    <string name="save">Save</string>
+    <string name="error_name_required">Name is required</string>
+    <string name="error_invalid_price">Enter a valid price</string>
+    <string name="error_invalid_threshold">Enter a valid threshold</string>
+    <string name="hint_initial_quantity">Starting quantity (optional)</string>
+    <string name="hint_swipe_or_hold_to_delete">Tip: swipe a product left, or press and hold, to delete it</string>
+    <string name="got_it">Got it</string>
+    <string name="product_deleted_format">%1$s deleted</string>
+    <string name="undo">Undo</string>
+    <!-- Stock -->
+    <string name="total_stock_value_format">Total stock value: %1$s</string>
+    <string name="sort_by_quantity">Sort by quantity</string>
+    <string name="sort_by_last_updated">Sort by last updated</string>
+    <string name="current_quantity_format">Current quantity: %1$d</string>
+    <string name="adjust_stock_title_format">Adjust stock — %1$s</string>
+    <string name="hint_quantity_delta">Change (e.g. 10 or -5)</string>
+    <string name="apply">Apply</string>
+    <string name="stock_updated">Stock updated</string>
+    <string name="error_invalid_quantity">Enter a valid quantity</string>
+
+    <!-- Record sale -->
+    <string name="label_product">Product</string>
+    <string name="unit_price_format">Unit price: %1$s</string>
+    <string name="remaining_stock_format">Remaining stock: %1$d</string>
+    <string name="total_price_format">Total: %1$s</string>
+    <string name="hint_quantity">Quantity</string>
+    <string name="record_sale">Record Sale</string>
+    <string name="sale_recorded">Sale recorded</string>
+    <string name="error_select_product">Select a product first</string>
+
+    <!-- Low stock alerts -->
+    <string name="no_low_stock_items">All products are above their reorder threshold 🎉</string>
+    <string name="low_stock_detail_format">%1$d left · threshold %2$d</string>
+
+    <!-- Reports -->
+    <string name="from_date">From date</string>
+    <string name="to_date">To date</string>
+    <string name="date_range_format">%1$s – %2$s</string>
+    <string name="revenue_this_week_format">Revenue this week: %1$s</string>
+    <string name="daily_summary">Daily summary</string>
+    <string name="top_products">Top-selling products</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="csv_exported">CSV exported</string>
+    <string name="share_report">Share report</string>
+    <string name="total_sold_format">%1$d sold</string>
+
+    <!-- Screen titles / headers (redesign) -->
+    <string name="screen_title_products">Products</string>
+    <string name="screen_title_stock">Stock</string>
+    <string name="screen_title_record_sale">Record Sale</string>
+    <string name="screen_title_low_stock">Low Stock Alerts</string>
+    <string name="screen_title_report">Reports</string>
+    <string name="stat_label_total_stock_value">Total stock value</string>
+    <string name="stat_label_revenue_this_week">Revenue this week</string>
+    <string name="eyebrow_category">Category</string>
+    <string name="eyebrow_status">Status</string>
+    <string name="content_desc_add_product">Add a new product</string>
+    <string name="content_desc_low_stock_icon">Low stock warning</string>
+    <string name="content_desc_export_icon">Export</string>
+    <string name="content_desc_empty_low_stock">No items to show</string>
+    <string name="default_quantity_value">1</string>
+    <string name="empty_products_title">No products yet</string>
+    <string name="empty_products_body">Tap the + button to add your first product.</string>
+    <string name="per_unit_format">per %1$s</string>
+
+    <!-- Dashboard -->
+    <string name="screen_title_dashboard">Dashboard</string>
+    <string name="eyebrow_overview">Overview</string>
+    <string name="eyebrow_quick_actions">Quick actions</string>
+    <string name="nav_products_title">Products</string>
+    <string name="nav_products_subtitle">Browse &amp; edit</string>
+    <string name="nav_stock_title">Stock</string>
+    <string name="nav_stock_subtitle">Levels &amp; adjustments</string>
+    <string name="nav_sale_title">Record Sale</string>
+    <string name="nav_sale_subtitle">Log a transaction</string>
+    <string name="nav_report_title">Reports</string>
+    <string name="nav_report_subtitle">Summaries &amp; export</string>
+    <string name="label_total">Total</string>
+    <string name="no_low_stock_products">low_stock</string>
+    <string name="app_name">StockMaster</string>
+    <string name="app_logo_desc" translatable="false">StockMaster App Logo</string>
+    <string name="error_duplicate_product_name">A product with this name already exists</string>
+    <string name="error_generic_save_format">Couldn\'t save: %1$s</string>
+    <string name="hint_shop_name">Shop name</string>
+    <string name="dialog_title_shop_name">What\'s your shop called?</string>
+    <string name="default_shop_name">My Shop</string>
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="content_desc_edit_shop_name">Edit shop name</string>
+    <string name="main_open_dashboard_title">Open Dashboard</string>
+    <string name="main_open_dashboard_subtitle">View stock, sales, and reports</string>
+    <string name="inventory_management_system">Inventory Management System</string>
+    <string name="real_time_analytics">Real-time Analytics</string>
+    <string name="track_stock_levels_and_movements_instantly">Track stock levels and movements instantly</string>
+    <string name="smart_sync">Smart Sync</string>
+    <string name="cloud_connected_inventory_across_all_devices">Cloud-connected inventory across all devices</string>
+    <string name="low_stock_alerts">Low Stock Alerts</string>
+    <string name="never_run_out_of_critical_inventory">Never run out of critical inventory</string>
+    <string name="enter_dashboard">Enter Dashboard</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_finish">Got it!</string>
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_step1_title">Manage Products</string>
+    <string name="onboarding_step1_desc">Start by adding your products. You can set prices, units, and low-stock reorder points.</string>
+    <string name="onboarding_step2_title">Track Stock</string>
+    <string name="onboarding_step2_desc">Check your inventory levels in real-time and quickly adjust quantities as they arrive.</string>
+    <string name="onboarding_step3_title">Record Sales</string>
+    <string name="onboarding_step3_desc">Log every sale with a few taps. The app automatically calculates totals and updates stock.</string>
+    <string name="onboarding_step4_title">Insightful Reports</string>
+    <string name="onboarding_step4_desc">View your daily performance and export CSV reports to share or keep for your records.</string>
+
+
+</resources>

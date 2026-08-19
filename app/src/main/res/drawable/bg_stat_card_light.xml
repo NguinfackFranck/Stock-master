@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Secondary hero card (revenue) — lighter than bg_stat_card so the two
+     don't compete; total stock value stays the dominant ink card. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/brand_emerald" />
+    <corners android:radius="@dimen/radius_card" />
+</shape>

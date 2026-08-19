@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/paper">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/surface"
+        android:paddingHorizontal="@dimen/space_l"
+        android:paddingTop="@dimen/space_xl"
+        android:paddingBottom="@dimen/space_l">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="72dp"
+            android:background="@color/surface"
+            app:contentInsetStart="@dimen/space_l"
+            app:titleTextAppearance="@style/Text.Display" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_m"
+            android:orientation="vertical"
+            android:background="@drawable/bg_stat_card"
+            android:padding="@dimen/space_l">
+
+            <TextView
+                style="@style/Text.Eyebrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#9FB0AA"
+                android:text="@string/stat_label_total_stock_value" />
+
+            <TextView
+                android:id="@+id/text_total_stock_value"
+                style="@style/Text.Mono.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/surface" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hairline_width"
+        android:background="@color/hairline" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_stock"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/space_l" />
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.StockManagement" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/brand_emerald</item>
+        <item name="colorPrimaryDark">@color/brand_emerald_dark</item>
+        <item name="colorAccent">@color/status_low</item>
+
+        <!-- Background and text colors -->
+        <item name="android:windowBackground">@color/paper</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+</resources>

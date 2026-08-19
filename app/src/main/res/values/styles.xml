@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ===================== THEME ===================== -->
+    <style name="Theme.StockManagement" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_emerald</item>
+        <item name="colorPrimaryDark">@color/brand_emerald_dark</item>
+        <item name="colorAccent">@color/status_low</item>
+        <item name="android:windowBackground">@color/paper</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- ===================== TYPE ROLES =====================
+         Display: sans-serif-condensed-medium — bold, technical headings
+         Body:    sans-serif — clean UI/body text
+         Mono:    monospace — every quantity and price (tabular ledger feel)
+         All are Android built-in system font families; no bundled/downloaded
+         font files or certs required. -->
+
+    <style name="Text.Display" parent="android:Widget">
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Text.Display.Small">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Text.Eyebrow" parent="android:Widget">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Text.Body" parent="android:Widget">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Text.Body.Secondary">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="Text.Mono" parent="android:Widget">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Text.Mono.Large">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="Text.Mono.Secondary">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- ===================== WIDGETS ===================== -->
+    <style name="Card">
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:paddingStart">@dimen/space_l</item>
+        <item name="android:paddingEnd">@dimen/space_l</item>
+        <item name="android:paddingTop">@dimen/space_m</item>
+        <item name="android:paddingBottom">@dimen/space_m</item>
+    </style>
+
+    <style name="Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/brand_emerald</item>
+        <item name="android:textColor">@color/surface</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/hairline</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <style name="Input" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/brand_emerald</item>
+        <item name="hintTextColor">@color/text_secondary</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+</resources>

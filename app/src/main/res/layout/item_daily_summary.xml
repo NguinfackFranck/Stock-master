@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="@dimen/space_s">
+
+    <TextView
+        android:id="@+id/text_summary_date"
+        style="@style/Text.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="Mon, Jan 5" />
+
+    <TextView
+        android:id="@+id/text_summary_quantity"
+        style="@style/Text.Mono.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_l"
+        tools:text="12 units" />
+
+    <TextView
+        android:id="@+id/text_summary_revenue"
+        style="@style/Text.Mono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="$240.00" />
+
+</LinearLayout>

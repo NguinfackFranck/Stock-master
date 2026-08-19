@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ink / neutrals -->
+    <color name="ink">#101B18</color>
+    <color name="ink_soft">#2A3733</color>
+    <color name="paper">#F4F6F3</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_sunken">#EDF1EE</color>
+    <color name="hairline">#E1E6E2</color>
+    <color name="text_primary">#101B18</color>
+    <color name="text_secondary">#5C6B66</color>
+    <color name="text_tertiary">#8B978F</color>
+
+    <!-- Brand -->
+    <color name="brand_emerald">#0E6E55</color>
+    <color name="brand_emerald_dark">#0A5240</color>
+    <color name="brand_emerald_tint">#DFF0EA</color>
+
+    <!-- Status: stock health traffic light -->
+    <color name="status_healthy">#0E6E55</color>
+    <color name="status_healthy_bg">#DFF0EA</color>
+    <color name="status_low">#C97A2B</color>
+    <color name="status_low_bg">#FBECDA</color>
+    <color name="status_critical">#B3402E</color>
+    <color name="status_critical_bg">#F8E2DD</color>
+
+    <!-- Legacy aliases used by earlier layouts (kept for compatibility) -->
+    <color name="secondary_text">@color/text_secondary</color>
+    <color name="default_text">@color/text_primary</color>
+    <color name="header_background">@color/surface</color>
+    <color name="low_stock_warning">@color/status_low</color>
+    <color name="low_stock_banner_background">@color/status_low_bg</color>
+    <color name="low_stock_banner_text">@color/status_low</color>
+    <color name="low_stock_row_background">@color/surface</color>
+
+    <color name="primary">#006495</color>
+<color name="on_primary">#FFFFFF</color>
+<color name="primary_container">#CBE6FF</color>
+<color name="on_primary_container">#001E30</color>
+
+<color name="secondary">#50606F</color>
+<color name="on_secondary">#FFFFFF</color>
+<color name="secondary_container">#D3E4F5</color>
+<color name="on_secondary_container">#0C1D29</color>
+
+<color name="tertiary">#65587B</color>
+<color name="on_tertiary">#FFFFFF</color>
+<color name="tertiary_container">#EBDDFF</color>
+<color name="on_tertiary_container">#211634</color>
+
+
+<color name="on_surface">#1A1C1E</color>
+<color name="on_surface_variant">#41484D</color>
+<color name="outline_variant">#C1C7CE</color>
+</resources>

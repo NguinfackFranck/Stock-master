@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/space_l"
+    android:layout_marginTop="@dimen/space_m"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_card_pressed"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="@dimen/space_l">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_product_name"
+            style="@style/Text.Display.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Bag of Cement" />
+
+        <TextView
+            android:id="@+id/text_product_category"
+            style="@style/Text.Eyebrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_chip"
+            tools:text="Building Materials" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/text_product_price"
+            style="@style/Text.Mono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$12.50" />
+
+        <TextView
+            android:id="@+id/text_product_unit"
+            style="@style/Text.Mono.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            tools:text="per kg" />
+
+    </LinearLayout>
+
+</LinearLayout>

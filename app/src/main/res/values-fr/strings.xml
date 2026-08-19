@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Navigation strings -->
+    <string name="app_name">Gestion des stocks</string>
+
+    <!-- Product list -->
+    <string name="add_product_title">Ajouter un produit</string>
+    <string name="edit_product_title">Modifier le produit</string>
+    <string name="delete_product_title">Supprimer le produit ?</string>
+    <string name="delete_product_message_format">Supprimer « %1$s » ? Cette action est irréversible.</string>
+    <string name="delete">Supprimer</string>
+    <string name="cancel">Annuler</string>
+    <string name="product_deleted">Produit supprimé</string>
+    <string name="product_added">Produit ajouté</string>
+    <string name="product_updated">Produit mis à jour</string>
+    <string name="low_stock_banner_format">%1$d produits sont en rupture de stock — appuyez pour vérifier</string>
+    <string name="price_not_set">Prix non défini</string>
+    <string name="quantity_format">%1$d unités</string>
+    <string name="action_search">Rechercher</string>
+    <string name="sort_by_name">Trier par nom</string>
+    <string name="sort_by_price">Trier par prix</string>
+    <string name="toggle_sort_direction">Changer la direction du tri</string>
+
+    <!-- Add/edit product form -->
+    <string name="hint_product_name">Nom du produit</string>
+    <string name="hint_category">Catégorie</string>
+    <string name="hint_unit">Unité (kg, unités, carton…)</string>
+    <string name="hint_price">Prix</string>
+    <string name="hint_threshold">Seuil de stock bas</string>
+    <string name="save">Enregistrer</string>
+    <string name="error_name_required">Le nom est obligatoire</string>
+    <string name="error_invalid_price">Saisissez un prix valide</string>
+    <string name="error_invalid_threshold">Saisissez un seuil valide</string>
+    <string name="hint_initial_quantity">Quantité initiale (facultatif)</string>
+    <string name="hint_swipe_or_hold_to_delete">Astuce : glissez un produit vers la gauche ou restez appuyé pour le supprimer</string>
+    <string name="got_it">Compris</string>
+    <string name="product_deleted_format">%1$s supprimé</string>
+    <string name="undo">Annuler</string>
+
+    <!-- Stock -->
+    <string name="total_stock_value_format">Valeur totale du stock : %1$s</string>
+    <string name="sort_by_quantity">Trier par quantité</string>
+    <string name="sort_by_last_updated">Trier par dernière mise à jour</string>
+    <string name="current_quantity_format">Quantité actuelle : %1$d</string>
+    <string name="adjust_stock_title_format">Ajuster le stock — %1$s</string>
+    <string name="hint_quantity_delta">Modification (ex. 10 ou -5)</string>
+    <string name="apply">Appliquer</string>
+    <string name="stock_updated">Stock mis à jour</string>
+    <string name="error_invalid_quantity">Saisissez une quantité valide</string>
+
+    <!-- Record sale -->
+    <string name="label_product">Produit</string>
+    <string name="unit_price_format">Prix unitaire : %1$s</string>
+    <string name="remaining_stock_format">Stock restant : %1$d</string>
+    <string name="total_price_format">Total : %1$s</string>
+    <string name="hint_quantity">Quantité</string>
+    <string name="record_sale">Enregistrer la vente</string>
+    <string name="sale_recorded">Vente enregistrée</string>
+    <string name="error_select_product">Sélectionnez d\'abord un produit</string>
+
+    <!-- Low stock alerts -->
+    <string name="no_low_stock_items">Tous les produits sont au-dessus du seuil de réapprovisionnement 🎉</string>
+    <string name="low_stock_detail_format">%1$d restants · seuil %2$d</string>
+
+    <!-- Reports -->
+    <string name="from_date">Du</string>
+    <string name="to_date">Au</string>
+    <string name="date_range_format">%1$s – %2$s</string>
+    <string name="revenue_this_week_format">Chiffre d\'affaires de la semaine : %1$s</string>
+    <string name="daily_summary">Résumé quotidien</string>
+    <string name="top_products">Produits les plus vendus</string>
+    <string name="export_csv">Exporter en CSV</string>
+    <string name="csv_exported">CSV exporté</string>
+    <string name="share_report">Partager le rapport</string>
+    <string name="total_sold_format">%1$d vendus</string>
+
+    <!-- Screen titles / headers (redesign) -->
+    <string name="screen_title_products">Produits</string>
+    <string name="screen_title_stock">Stock</string>
+    <string name="screen_title_record_sale">Enregistrer une vente</string>
+    <string name="screen_title_low_stock">Alertes stock bas</string>
+    <string name="screen_title_report">Rapports</string>
+    <string name="stat_label_total_stock_value">Valeur totale du stock</string>
+    <string name="stat_label_revenue_this_week">Chiffre d\'affaires de la semaine</string>
+    <string name="eyebrow_category">Catégorie</string>
+    <string name="eyebrow_status">Statut</string>
+    <string name="content_desc_add_product">Ajouter un nouveau produit</string>
+    <string name="content_desc_low_stock_icon">Avertissement stock bas</string>
+    <string name="content_desc_export_icon">Exporter</string>
+    <string name="content_desc_empty_low_stock">Aucun élément à afficher</string>
+    <string name="default_quantity_value">1</string>
+    <string name="empty_products_title">Aucun produit pour le moment</string>
+    <string name="empty_products_body">Appuyez sur le bouton + pour ajouter votre premier produit.</string>
+    <string name="per_unit_format">par %1$s</string>
+
+    <!-- Dashboard -->
+    <string name="screen_title_dashboard">Tableau de bord</string>
+    <string name="eyebrow_overview">Aperçu</string>
+    <string name="eyebrow_quick_actions">Actions rapides</string>
+    <string name="nav_products_title">Produits</string>
+    <string name="nav_products_subtitle">Parcourir &amp; modifier</string>
+    <string name="nav_stock_title">Stock</string>
+    <string name="nav_stock_subtitle">Niveaux &amp; ajustements</string>
+    <string name="nav_sale_title">Enregistrer une vente</string>
+    <string name="nav_sale_subtitle">Enregistrer une transaction</string>
+    <string name="nav_report_title">Rapports</string>
+    <string name="nav_report_subtitle">Résumés &amp; exportation</string>
+    <string name="label_total">Total</string>
+    <string name="no_low_stock_products">stock_bas</string>
+    <string name="error_duplicate_product_name">Un produit portant ce nom existe déjà</string>
+    <string name="error_generic_save_format">Impossible d\'enregistrer : %1$s</string>
+    <string name="hint_shop_name">Nom de la boutique</string>
+    <string name="dialog_title_shop_name">Comment s\'appelle votre boutique ?</string>
+    <string name="default_shop_name">Ma boutique</string>
+    <string name="greeting_morning">Bonjour</string>
+    <string name="greeting_afternoon">Bon après-midi</string>
+    <string name="greeting_evening">Bonsoir</string>
+    <string name="content_desc_edit_shop_name">Modifier le nom de la boutique</string>
+    <string name="main_open_dashboard_title">Ouvrir le tableau de bord</string>
+    <string name="main_open_dashboard_subtitle">Afficher le stock, les ventes et les rapports</string>
+    <string name="inventory_management_system">Système de gestion des stocks</string>
+    <string name="real_time_analytics">Analyses en temps réel</string>
+    <string name="track_stock_levels_and_movements_instantly">Suivre les niveaux et les mouvements de stock instantanément</string>
+    <string name="smart_sync">Synchronisation intelligente</string>
+    <string name="cloud_connected_inventory_across_all_devices">Stock connecté au cloud sur tous les appareils</string>
+    <string name="low_stock_alerts">Alerte de stock faible</string>
+    <string name="never_run_out_of_critical_inventory">Ne manquez jamais de stock critique</string>
+    <string name="enter_dashboard">Accéder au tableau de bord</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_next">Suivant</string>
+    <string name="onboarding_finish">Compris !</string>
+    <string name="onboarding_skip">Passer</string>
+    <string name="onboarding_step1_title">Gérer les produits</string>
+    <string name="onboarding_step1_desc">Commencez par ajouter vos produits. Vous pouvez définir les prix, les unités et les seuils de réapprovisionnement.</string>
+    <string name="onboarding_step2_title">Suivre le stock</string>
+    <string name="onboarding_step2_desc">Consultez vos niveaux de stock en temps réel et ajustez rapidement les quantités dès leur arrivée.</string>
+    <string name="onboarding_step3_title">Enregistrer les ventes</string>
+    <string name="onboarding_step3_desc">Enregistrez chaque vente en quelques clics. L\'application calcule automatiquement les totaux et met à jour le stock.</string>
+    <string name="onboarding_step4_title">Rapports détaillés</string>
+    <string name="onboarding_step4_desc">Visualisez vos performances quotidiennes et exportez des rapports CSV pour les partager ou les conserver.</string>
+
+</resources>

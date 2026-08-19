@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Signature element: a small status dot, tinted at bind-time to
+     status_healthy / status_low / status_critical to show stock health
+     at a glance. See ProductAdapter / StockActivity for the tint logic. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/status_healthy" />
+    <size android:width="10dp" android:height="10dp" />
+</shape>

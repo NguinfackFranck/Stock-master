@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ink / neutrals (inverted for dark mode) -->
+    <color name="ink">#F4F6F3</color>
+    <color name="ink_soft">#D1D9D6</color>
+    <color name="paper">#101B18</color>
+    <color name="surface">#1C2A26</color>
+    <color name="surface_sunken">#14211E</color>
+    <color name="hairline">#2A3733</color>
+    <color name="text_primary">#F4F6F3</color>
+    <color name="text_secondary">#A0ACA7</color>
+    <color name="text_tertiary">#707E78</color>
+
+    <!-- Brand (slightly lightened for better contrast on dark) -->
+    <color name="brand_emerald">#1AB992</color>
+    <color name="brand_emerald_dark">#128266</color>
+    <color name="brand_emerald_tint">#1C2A26</color>
+
+    <!-- Status: stock health traffic light (keep them visible on dark) -->
+    <color name="status_healthy">#2ECC71</color>
+    <color name="status_healthy_bg">#1C2A26</color>
+    <color name="status_low">#F39C12</color>
+    <color name="status_low_bg">#2C251C</color>
+    <color name="status_critical">#E74C3C</color>
+    <color name="status_critical_bg">#2C1C1C</color>
+
+    <!-- App-specific colors -->
+    <color name="primary">#7FBBE3</color>
+    <color name="on_primary">#00334E</color>
+    <color name="primary_container">#004B6E</color>
+    <color name="on_primary_container">#CBE6FF</color>
+
+    <color name="secondary">#B7C8D9</color>
+    <color name="on_secondary">#22323F</color>
+    <color name="secondary_container">#394856</color>
+    <color name="on_secondary_container">#D3E4F5</color>
+
+    <color name="tertiary">#D0BCFF</color>
+    <color name="on_tertiary">#362B4B</color>
+    <color name="tertiary_container">#4D4162</color>
+    <color name="on_tertiary_container">#EBDDFF</color>
+
+    <color name="on_surface">#E2E2E6</color>
+    <color name="on_surface_variant">#C1C7CE</color>
+</resources>
