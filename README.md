@@ -43,7 +43,7 @@ The project adheres to modern Android development standards:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/StockManagement.git
+    git clone https://github.com/NguinfackFranck/Stock-master.git
     ```
 2.  **Open in Android Studio:**
     *   Open Android Studio (Hedgehog 2023.1.1 or newer recommended).
