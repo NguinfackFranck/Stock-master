@@ -1,8 +1,7 @@
-# **StockMaster: Professional Retail Inventory & Sales System**
+# **StockMaster: mobile stock tracking**
 
 **StockMaster** is a robust, offline-first Android application developed in Java. It is designed to modernize inventory management for small-to-medium retail businesses, specifically optimized for the Central African market (supporting FCFA and offline reliability). 
 
-This project was developed as part of a final-year thesis to evaluate the impact of digital tracking systems on retail efficiency.
 
 ---
 
@@ -56,8 +55,7 @@ The project adheres to modern Android development standards:
 
 ---
 
-## **🎓 Thesis Context**
-This application serves as the core technical artifact for the thesis: **"Evaluation of Digital Inventory Systems for Retail Efficiency."** It demonstrates the transition from traditional manual bookkeeping to a data-driven, automated mobile solution.
+
 
 ---
 
