@@ -7,6 +7,11 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
+/**
+ * Utility class for managing financial localization.
+ * Handles currency symbol persistence and dynamic formatting.
+ * Specifically optimized for FCFA which traditionally does not use decimal points.
+ */
 public class CurrencyUtils {
     private static final String PREFS_NAME = "app_prefs";
     private static final String KEY_CURRENCY = "currency_symbol";

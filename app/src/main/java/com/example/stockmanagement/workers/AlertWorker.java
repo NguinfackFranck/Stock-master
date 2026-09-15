@@ -16,6 +16,10 @@ import com.example.stockmanagement.pojos.LowStockAlert;
 
 import java.util.List;
 
+/**
+ * Background worker that checks for products with low stock.
+ * If such products are found, it triggers a system notification to alert the user.
+ */
 public class AlertWorker extends Worker {
     private static final String CHANNEL_ID = "low_stock_alerts";
     private static final int NOTIFICATION_ID = 101;
@@ -24,6 +28,11 @@ public class AlertWorker extends Worker {
         super(context, workerParams);
     }
 
+    /**
+     * Executes the background work. 
+     * Queries the database for low-stock alerts and sends a notification if needed.
+     * @return Result.success() always, as the task is non-critical and shouldn't retry indefinitely.
+     */
     @NonNull
     @Override
     public Result doWork() {

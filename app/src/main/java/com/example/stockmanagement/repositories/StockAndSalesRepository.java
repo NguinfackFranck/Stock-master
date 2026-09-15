@@ -35,6 +35,10 @@ import java.util.logging.ErrorManager;
 import lombok.AllArgsConstructor;
 
 
+/**
+ * Repository handling stock adjustments and sales transactions.
+ * It coordinates multiple DAOs and manages background task execution.
+ */
 public class StockAndSalesRepository {
     private final StockItemDao stockItemDao;
     private final SaleDao saleDao;
@@ -57,6 +61,11 @@ public class StockAndSalesRepository {
 
     }
 
+    /**
+     * Increases or decreases stock for a product and logs the change for sync.
+     * @param productId The ID of the product.
+     * @param quantity The amount to adjust (can be negative).
+     */
     public void addStock(Long productId, int quantity){
         executorService.execute(() -> {
             stockItemDao.adjustStockWithCurrentDate(productId, quantity);
@@ -68,6 +77,15 @@ public class StockAndSalesRepository {
             syncLogDao.insertSyncLog(syncLog);
         });
     }
+
+    /**
+     * Records a new sale in the database.
+     * Performs atomic updates to both the sale record and stock inventory.
+     * @param productId The product being sold.
+     * @param quantity The quantity sold.
+     * @throws ProductNotFoundException If product does not exist.
+     * @throws InsufficientStockException If requested quantity exceeds available stock.
+     */
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Transaction
     public void recordSale(long productId, int quantity) throws ProductNotFoundException, InsufficientStockException

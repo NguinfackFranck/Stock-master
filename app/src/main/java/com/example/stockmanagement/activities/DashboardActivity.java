@@ -37,6 +37,11 @@ import java.util.Locale;
 
 import android.widget.Toast;
 
+/**
+ * The primary entry point for the application after onboarding.
+ * Displays high-level business metrics (Total Stock Value, Weekly Revenue) 
+ * and provides navigation to all functional modules.
+ */
 public class DashboardActivity extends AppCompatActivity {
 
     private static final String TAG = "DashboardActivity";

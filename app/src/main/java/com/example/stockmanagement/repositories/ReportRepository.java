@@ -15,6 +15,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Repository dedicated to generating business intelligence reports.
+ * Handles SQL aggregations for revenue tracking and CSV file generation.
+ */
 public class ReportRepository {
     private final Context context;
     private final SaleDao saleDao;
@@ -39,6 +43,12 @@ public class ReportRepository {
         return saleDao.getTopSellingProducts(from);
     }
 
+    /**
+     * Exports the provided summaries into a standardized CSV file.
+     * Uses FileProvider to generate a secure URI for sharing with external apps.
+     * @param summaries The list of daily summaries to export.
+     * @return A secure Uri pointing to the generated CSV file, or null if export fails.
+     */
     public Uri exportCsv(List<DailySummary> summaries) {
         try {
             var timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());

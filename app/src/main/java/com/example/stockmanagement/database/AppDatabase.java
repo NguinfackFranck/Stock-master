@@ -18,6 +18,11 @@ import com.example.stockmanagement.entities.SyncLog;
         SyncLog.class}, version = 2, exportSchema = true)
 @TypeConverters({TimeConverters.class,UuidConverter.class})
 
+/**
+ * Central database class using Room Persistence Library.
+ * Manages the SQLite database and provides access to DAOs.
+ * Includes migration logic to handle schema updates without data loss.
+ */
 public abstract class AppDatabase extends RoomDatabase {
     public abstract ProductDao productDao();
     public abstract StockItemDao stockItemDao();
@@ -38,6 +43,12 @@ public abstract class AppDatabase extends RoomDatabase {
                             .build();}}}
         return INSTANCE;
     }
+
+    /**
+     * Migration from Version 1 to 2.
+     * Adds high-performance indexes to transactional columns to ensure 
+     * the app remains fast as the database grows.
+     */
     private static final Migration MIGRATION_1_2 = new Migration(1, 2) {
         @Override
         public void migrate(SupportSQLiteDatabase database) {

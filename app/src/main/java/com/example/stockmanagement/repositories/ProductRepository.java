@@ -21,6 +21,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
+/**
+ * Repository responsible for Product-related data operations.
+ * Handles duplicate checking, product creation with initial stock, and sync logging.
+ */
 public class ProductRepository {
     private final ProductDao productDao;
     private final StockItemDao stockItemDao;
@@ -38,6 +42,12 @@ public class ProductRepository {
     private final SyncLogDao syncLogDao;
     private static final String TABLE_PRODUCTS = Product.TABLE_NAME;
 
+    /**
+     * Inserts a new product into the database and creates its initial stock entry.
+     * @param product The product entity to insert.
+     * @param initialQuantity The starting stock level.
+     * @throws DuplicateException If a product with the same name already exists.
+     */
     public void insertProduct(Product product,int initialQuantity) {
         // Step 1: Check for duplicate name before any write
         if (productDao.countByName(product.getName()) > 0) {
@@ -60,7 +70,12 @@ public class ProductRepository {
             throw new DuplicateException(product.getName());
         }
     }
-    // Update also validates for duplicate names, excluding the current product:
+
+    /**
+     * Updates an existing product's details.
+     * @param product The updated product entity.
+     * @throws DuplicateException If the new name conflicts with another existing product.
+     */
     public void updateProduct(Product product){
         if (productDao.countByNameExcludingId(product.getName(), product.getId()) > 0) {
             throw new DuplicateException(product.getName());

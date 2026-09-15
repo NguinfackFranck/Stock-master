@@ -10,6 +10,10 @@ import com.example.stockmanagement.database.TimeConverters;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Entity representing a Product in the catalog.
+ * Defines the product details including name, price, and low-stock threshold.
+ */
 @Entity(tableName = Product.TABLE_NAME,
 indices = {@Index(value = {"name"},unique = true)})
 
@@ -23,8 +27,10 @@ public class Product implements Serializable {
     private String name;
     private String category;
     private String unit; // "kg", "units", "carton"
-    private int threshold = 5; // low-stock reorder point
+    /** The reorder point; when stock reaches this level, an alert is triggered. */
+    private int threshold = 5; 
     private Date created_at;
+    /** Sync flag: 0 for local-only, 1 for synced to cloud. */
     private int synced = 0;
 
     // Default constructor (REQUIRED for Room)

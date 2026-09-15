@@ -20,6 +20,11 @@ import androidx.work.WorkManager;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Main Application class for StockManagement.
+ * Responsible for initializing global singletons like the Database, Repositories,
+ * and the shared ViewModel Factory. It also schedules background workers.
+ */
 public class StockManagementApp extends Application implements StockActivity.HasStockViewModelFactory,
         ProductListActivity.HasProductViewModelFactory,
         ReportActivity.HasReportViewModelFactory {
@@ -58,6 +63,10 @@ public class StockManagementApp extends Application implements StockActivity.Has
         scheduleLowStockAlerts();
     }
 
+    /**
+     * Schedules the AlertWorker using WorkManager to check for low stock levels
+     * periodically (every 15 minutes).
+     */
     private void scheduleLowStockAlerts() {
         PeriodicWorkRequest alertRequest =
                 new PeriodicWorkRequest.Builder(AlertWorker.class, 15, TimeUnit.MINUTES)

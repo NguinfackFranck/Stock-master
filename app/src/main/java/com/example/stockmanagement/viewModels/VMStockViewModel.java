@@ -26,6 +26,10 @@ import java.util.concurrent.Executors;
 import lombok.RequiredArgsConstructor;
 
 
+/**
+ * ViewModel for Stock management operations.
+ * Exposes observable LiveData for stock levels and handles asynchronous sales recording.
+ */
 public class VMStockViewModel extends ViewModel {
     private StockAndSalesRepository repository ;
     public final LiveData<List<StockItem>> allStock;
@@ -35,10 +39,16 @@ public class VMStockViewModel extends ViewModel {
     private final MutableLiveData<String> saleError = new MutableLiveData<>();
     private final MutableLiveData<Boolean> saleSuccess = new MutableLiveData<>();
 
+    /**
+     * @return LiveData containing the error message if a sale fails.
+     */
     public LiveData<String> getSaleError() {
         return saleError;
     }
 
+    /**
+     * @return LiveData indicating if a sale was successfully recorded.
+     */
     public LiveData<Boolean> getSaleSuccess() {
         return saleSuccess;
     }
@@ -49,6 +59,10 @@ public class VMStockViewModel extends ViewModel {
         this.totalStockValue = repository.getTotalStockValue();
     }
 
+    /**
+     * Records a sale on a background thread.
+     * Updates saleSuccess or saleError LiveData based on the result.
+     */
     public void recordSale(Long productId, int quantity) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
