@@ -54,6 +54,20 @@ The project adheres to modern Android development standards:
     *   Click the `Run` button.
 
 ---
+<img width="177" height="384" alt="image" src="https://github.com/user-attachments/assets/b884ab22-d744-49c4-a4b9-a951b473465e" />
+
+<img width="278" height="601" alt="image" src="https://github.com/user-attachments/assets/03714dc9-c4c3-475e-896d-ab67c7318b6c" />
+
+<img width="197" height="388" alt="image" src="https://github.com/user-attachments/assets/e373793a-8e4b-4c54-8400-79e27d3c6918" />
+
+<img width="183" height="396" alt="image" src="https://github.com/user-attachments/assets/ace75797-86fd-44e0-bace-c5029b800b78" />
+
+<img width="182" height="395" alt="image" src="https://github.com/user-attachments/assets/f4f613ab-dd4d-4bf4-a533-be830a6bfee9" />
+
+<img width="183" height="397" alt="image" src="https://github.com/user-attachments/assets/cacb4875-3dc0-4984-b48e-ae2b2107de70" />
+
+
+
 
 
 
