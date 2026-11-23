@@ -7,6 +7,7 @@ public class DailySummary {
         public Date date;
         public int totalQuantity;
         public double totalRevenue;
+        public double totalProfit;
         public String unitDetails; // e.g. "10 kg, 5 units"
 
         public int getTotalQuantity() {
@@ -31,6 +32,14 @@ public class DailySummary {
 
         public void setTotalRevenue(double totalRevenue) {
                 this.totalRevenue = totalRevenue;
+        }
+
+        public double getTotalProfit() {
+                return totalProfit;
+        }
+
+        public void setTotalProfit(double totalProfit) {
+                this.totalProfit = totalProfit;
         }
 
         public String getUnitDetails() {

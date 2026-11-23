@@ -25,7 +25,8 @@
     <string name="hint_product_name">Product name</string>
     <string name="hint_category">Category</string>
     <string name="hint_unit">Unit (kg, units, carton…)</string>
-    <string name="hint_price">Price</string>
+    <string name="hint_price">Selling price</string>
+    <string name="hint_buying_price">Buying price (cost)</string>
     <string name="hint_threshold">Low-stock threshold</string>
     <string name="save">Save</string>
     <string name="error_name_required">Name is required</string>
@@ -47,15 +48,28 @@
     <string name="stock_updated">Stock updated</string>
     <string name="error_invalid_quantity">Enter a valid quantity</string>
 
-    <!-- Record sale -->
+    <!-- Record sale & Cart -->
     <string name="label_product">Product</string>
     <string name="unit_price_format">Unit price: %1$s</string>
+    <string name="buying_price_format">Cost price: %1$s</string>
+    <string name="net_profit_format">Net profit: %1$s</string>
     <string name="remaining_stock_format">Remaining stock: %1$d</string>
     <string name="total_price_format">Total: %1$s</string>
     <string name="hint_quantity">Quantity</string>
     <string name="record_sale">Record Sale</string>
     <string name="sale_recorded">Sale recorded</string>
     <string name="error_select_product">Select a product first</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="cart_empty">Your cart is empty. Select a product and tap Add to Cart.</string>
+    <string name="checkout_and_print">Checkout &amp; Print Receipt</string>
+    <string name="checkout_only">Checkout (No Print)</string>
+    <string name="select_printer">Select Bluetooth Printer</string>
+    <string name="no_printer_found">No paired Bluetooth printer found. Please pair a printer in Bluetooth settings.</string>
+    <string name="printing_receipt">Printing receipt over Bluetooth...</string>
+    <string name="receipt_printed_success">Receipt printed successfully!</string>
+    <string name="error_printing">Printing failed: %1$s</string>
+    <string name="item_added_to_cart">%1$s added to cart</string>
 
     <!-- Low stock alerts -->
     <string name="no_low_stock_items">All products are above their reorder threshold 🎉</string>
@@ -66,6 +80,7 @@
     <string name="to_date">To date</string>
     <string name="date_range_format">%1$s – %2$s</string>
     <string name="revenue_this_week_format">Revenue this week: %1$s</string>
+    <string name="net_profit_this_week_format">Net profit this week: %1$s</string>
     <string name="daily_summary">Daily summary</string>
     <string name="top_products">Top-selling products</string>
     <string name="export_csv">Export CSV</string>

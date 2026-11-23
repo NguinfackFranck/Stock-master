@@ -29,9 +29,12 @@ public class Sale {
     private UUID id;
     private Long product_id;
     private Double unit_price;
+    private Double buying_price;
     private Double total_price;
+    private Double net_profit;
     private int quantity;
     private Date sale_date;
+    private String transaction_id;
     private int synced = 0;
 
     // Default constructor (REQUIRED for Room)
@@ -85,6 +88,30 @@ public class Sale {
 
     public void setUnit_price(Double unit_price) {
         this.unit_price = unit_price;
+    }
+
+    public Double getBuying_price() {
+        return buying_price;
+    }
+
+    public void setBuying_price(Double buying_price) {
+        this.buying_price = buying_price;
+    }
+
+    public Double getNet_profit() {
+        return net_profit;
+    }
+
+    public void setNet_profit(Double net_profit) {
+        this.net_profit = net_profit;
+    }
+
+    public String getTransaction_id() {
+        return transaction_id;
+    }
+
+    public void setTransaction_id(String transaction_id) {
+        this.transaction_id = transaction_id;
     }
 
     public Double getTotal_price() {

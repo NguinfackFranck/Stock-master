@@ -39,6 +39,11 @@ public class ReportRepository {
         return saleDao.getTotalRevenue(weekAgo);
     }
 
+    public LiveData<Double> getProfitThisWeek() {
+        Date weekAgo = new Date(System.currentTimeMillis() - 7L * 24 * 60 * 60 * 1000);
+        return saleDao.getTotalNetProfit(weekAgo);
+    }
+
     public List<TopSellingProduct> getTopProducts(Date from) {
         return saleDao.getTopSellingProducts(from);
     }
@@ -55,7 +60,7 @@ public class ReportRepository {
             var file = new java.io.File(exportDir, "Daily_Sales_Report_" + timeStamp + ".csv");
             try (java.io.FileWriter writer = new java.io.FileWriter(file)) {
                 //  headers for the CSV
-                writer.append("Date,Items Sold (Qty Unit Product),Total Revenue\n");
+                writer.append("Date,Items Sold (Qty Unit Product),Total Revenue,Total Net Profit\n");
                 
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
@@ -63,10 +68,12 @@ public class ReportRepository {
                     var dateStr = d.date != null ? sdf.format(d.date) : "N/A";
                     var details = d.getUnitDetails() != null ? d.getUnitDetails() : String.valueOf(d.totalQuantity);
                     var revenueStr = CurrencyUtils.formatCurrency(context, d.totalRevenue);
+                    var profitStr = CurrencyUtils.formatCurrency(context, d.totalProfit);
 
                     writer.append(dateStr).append(",")
                             .append("\"").append(details).append("\"").append(",") // Quote details as they contain commas
-                            .append(revenueStr).append("\n");
+                            .append(revenueStr).append(",")
+                            .append(profitStr).append("\n");
                 }
             }
             // Use of FileProvider so other apps can open it safely

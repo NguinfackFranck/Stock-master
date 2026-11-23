@@ -66,11 +66,11 @@
                 android:layout_marginEnd="@dimen/space_s">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_price"
+                    android:id="@+id/edit_buying_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="monospace"
-                    android:hint="@string/hint_price"
+                    android:hint="@string/hint_buying_price"
                     android:inputType="numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,15 +82,30 @@
                 android:layout_marginStart="@dimen/space_s">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_threshold"
+                    android:id="@+id/edit_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="monospace"
-                    android:hint="@string/hint_threshold"
-                    android:inputType="number" />
+                    android:hint="@string/hint_price"
+                    android:inputType="numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_m">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_threshold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:hint="@string/hint_threshold"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Input"

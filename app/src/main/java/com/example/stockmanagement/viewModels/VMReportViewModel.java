@@ -21,6 +21,7 @@ public class VMReportViewModel extends ViewModel {
 
     private final MutableLiveData<List<DailySummary>> dailySummary = new MutableLiveData<>();
     private final LiveData<Double> revenueThisWeek;
+    private final LiveData<Double> profitThisWeek;
     private final MutableLiveData<List<TopSellingProduct>> topProducts = new MutableLiveData<>();
     private final MutableLiveData<Uri> exportedCsvUri = new MutableLiveData<>();
     private final MutableLiveData<Boolean> isLoading = new MutableLiveData<>(false);
@@ -28,10 +29,12 @@ public class VMReportViewModel extends ViewModel {
     public VMReportViewModel(ReportRepository repository) {
         this.repository = repository;
         this.revenueThisWeek = repository.getRevenueThisWeek();
+        this.profitThisWeek = repository.getProfitThisWeek();
     }
 
     public LiveData<List<DailySummary>> getDailySummary() { return dailySummary; }
     public LiveData<Double> getRevenueThisWeek() { return revenueThisWeek; }
+    public LiveData<Double> getProfitThisWeek() { return profitThisWeek; }
     public LiveData<List<TopSellingProduct>> getTopProducts() { return topProducts; }
     public LiveData<Uri> getExportedCsvUri() { return exportedCsvUri; }
     public LiveData<Boolean> getIsLoading() { return isLoading; }

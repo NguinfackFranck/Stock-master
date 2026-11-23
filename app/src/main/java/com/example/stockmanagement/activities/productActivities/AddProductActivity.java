@@ -36,6 +36,7 @@ public class AddProductActivity extends AppCompatActivity {
     private TextInputEditText editCategory;
     private TextInputEditText editUnit;
     private TextInputEditText editPrice;
+    private TextInputEditText editBuyingPrice;
     private TextInputEditText editThreshold;
     private TextInputEditText editInitialQuantity;
 
@@ -54,6 +55,7 @@ public class AddProductActivity extends AppCompatActivity {
         editCategory = findViewById(R.id.edit_category);
         editUnit = findViewById(R.id.edit_unit);
         editPrice = findViewById(R.id.edit_price);
+        editBuyingPrice = findViewById(R.id.edit_buying_price);
         editThreshold = findViewById(R.id.edit_threshold);
         editInitialQuantity = findViewById(R.id.edit_initial_quantity);
         Button saveButton = findViewById(R.id.button_save);
@@ -84,6 +86,9 @@ public class AddProductActivity extends AppCompatActivity {
         if (product.getPrice() != null) {
             editPrice.setText(String.valueOf(product.getPrice()));
         }
+        if (product.getBuyingPrice() != null) {
+            editBuyingPrice.setText(String.valueOf(product.getBuyingPrice()));
+        }
         editThreshold.setText(String.valueOf(product.getThreshold()));
     }
 
@@ -108,6 +113,17 @@ public class AddProductActivity extends AppCompatActivity {
             }
         }
 
+        Double buyingPrice = null;
+        String buyingPriceText = Objects.requireNonNull(editBuyingPrice.getText()).toString().trim();
+        if (!TextUtils.isEmpty(buyingPriceText)) {
+            try {
+                buyingPrice = Double.parseDouble(buyingPriceText);
+            } catch (NumberFormatException e) {
+                editBuyingPrice.setError(getString(R.string.error_invalid_price));
+                return;
+            }
+        }
+
         int threshold = 5;
         String thresholdText = Objects.requireNonNull(editThreshold.getText()).toString().trim();
         if (!TextUtils.isEmpty(thresholdText)) {
@@ -127,6 +143,7 @@ public class AddProductActivity extends AppCompatActivity {
             editingProduct.setCategory(category);
             editingProduct.setUnit(unit);
             editingProduct.setPrice(price);
+            editingProduct.setBuyingPrice(buyingPrice);
             editingProduct.setThreshold(threshold);
 
             viewModel.update(editingProduct, new VMProductViewModel.OnResult() {
@@ -161,6 +178,7 @@ public class AddProductActivity extends AppCompatActivity {
             product.setCategory(category);
             product.setUnit(unit);
             product.setPrice(price);
+            product.setBuyingPrice(buyingPrice);
             product.setThreshold(threshold);
 
             viewModel.insert(product, initialQuantity, new VMProductViewModel.OnResult() {

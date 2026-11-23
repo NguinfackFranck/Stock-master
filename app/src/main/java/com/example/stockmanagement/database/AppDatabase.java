@@ -15,7 +15,7 @@ import com.example.stockmanagement.entities.StockItem;
 import com.example.stockmanagement.entities.SyncLog;
 
 @Database(entities = {StockItem.class, Product.class, Sale.class,
-        SyncLog.class}, version = 2, exportSchema = true)
+        SyncLog.class}, version = 3, exportSchema = true)
 @TypeConverters({TimeConverters.class,UuidConverter.class})
 
 /**
@@ -39,7 +39,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                     AppDatabase.class,
                                     DATABASE_NAME
                             )
-                            .addMigrations(MIGRATION_1_2)
+                            .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                             .build();}}}
         return INSTANCE;
     }
@@ -62,15 +62,21 @@ public abstract class AppDatabase extends RoomDatabase {
             database.execSQL("CREATE INDEX idx_sync_log_table_record ON sync_log(table_name, record_id)");
         }
     };
-    // Future migration: V2 -> V3 (add new columns, etc.)
-    /*
+
+    /**
+     * Migration from Version 2 to 3.
+     * Adds buying price to products, and buying_price, net_profit, and transaction_id to sales.
+     */
     private static final Migration MIGRATION_2_3 = new Migration(2, 3) {
         @Override
         public void migrate(SupportSQLiteDatabase database) {
-            database.execSQL("ALTER TABLE products ADD COLUMN price REAL");
+            database.execSQL("ALTER TABLE products ADD COLUMN buyingPrice REAL");
+            database.execSQL("ALTER TABLE sales ADD COLUMN buying_price REAL");
+            database.execSQL("ALTER TABLE sales ADD COLUMN net_profit REAL");
+            database.execSQL("ALTER TABLE sales ADD COLUMN transaction_id TEXT");
+            database.execSQL("CREATE INDEX idx_sales_transaction_id ON sales(transaction_id)");
         }
     };
-    */
 
 
 }

@@ -3,23 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:baselineAligned="false"
     android:gravity="center_vertical"
+    android:orientation="horizontal"
     android:paddingVertical="@dimen/space_s">
 
-    <TextView
-        android:id="@+id/text_top_product_name"
-        style="@style/Text.Body"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:text="Bag of Cement" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_top_product_name"
+            style="@style/Text.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Bag of Cement" />
+
+        <TextView
+            android:id="@+id/text_top_product_sold"
+            style="@style/Text.Mono.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            tools:text="86 sold" />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/text_top_product_sold"
+        android:id="@+id/text_top_product_profit"
         style="@style/Text.Mono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="86 sold" />
+        android:textColor="@color/brand_emerald"
+        tools:text="+$120.00" />
 
 </LinearLayout>

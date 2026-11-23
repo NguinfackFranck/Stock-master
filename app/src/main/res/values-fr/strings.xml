@@ -26,7 +26,8 @@
     <string name="hint_product_name">Nom du produit</string>
     <string name="hint_category">Catégorie</string>
     <string name="hint_unit">Unité (kg, unités, carton…)</string>
-    <string name="hint_price">Prix</string>
+    <string name="hint_price">Prix de vente</string>
+    <string name="hint_buying_price">Prix d\'achat (coût)</string>
     <string name="hint_threshold">Seuil de stock bas</string>
     <string name="save">Enregistrer</string>
     <string name="error_name_required">Le nom est obligatoire</string>
@@ -49,15 +50,28 @@
     <string name="stock_updated">Stock mis à jour</string>
     <string name="error_invalid_quantity">Saisissez une quantité valide</string>
 
-    <!-- Record sale -->
+    <!-- Record sale & Cart -->
     <string name="label_product">Produit</string>
     <string name="unit_price_format">Prix unitaire : %1$s</string>
+    <string name="buying_price_format">Prix d\'achat : %1$s</string>
+    <string name="net_profit_format">Bénéfice net : %1$s</string>
     <string name="remaining_stock_format">Stock restant : %1$d</string>
     <string name="total_price_format">Total : %1$s</string>
     <string name="hint_quantity">Quantité</string>
     <string name="record_sale">Enregistrer la vente</string>
     <string name="sale_recorded">Vente enregistrée</string>
     <string name="error_select_product">Sélectionnez d\'abord un produit</string>
+    <string name="add_to_cart">Ajouter au panier</string>
+    <string name="shopping_cart">Panier d\'achat</string>
+    <string name="cart_empty">Votre panier est vide. Sélectionnez un produit et appuyez sur Ajouter au panier.</string>
+    <string name="checkout_and_print">Payer &amp; Imprimer le reçu</string>
+    <string name="checkout_only">Payer (sans impression)</string>
+    <string name="select_printer">Sélectionner l\'imprimante Bluetooth</string>
+    <string name="no_printer_found">Aucune imprimante Bluetooth couplée trouvée. Veuillez coupler une imprimante dans les paramètres Bluetooth.</string>
+    <string name="printing_receipt">Impression du reçu via Bluetooth…</string>
+    <string name="receipt_printed_success">Reçu imprimé avec succès !</string>
+    <string name="error_printing">Échec de l\'impression : %1$s</string>
+    <string name="item_added_to_cart">%1$s ajouté au panier</string>
 
     <!-- Low stock alerts -->
     <string name="no_low_stock_items">Tous les produits sont au-dessus du seuil de réapprovisionnement 🎉</string>
@@ -68,6 +82,7 @@
     <string name="to_date">Au</string>
     <string name="date_range_format">%1$s – %2$s</string>
     <string name="revenue_this_week_format">Chiffre d\'affaires de la semaine : %1$s</string>
+    <string name="net_profit_this_week_format">Bénéfice net de la semaine : %1$s</string>
     <string name="daily_summary">Résumé quotidien</string>
     <string name="top_products">Produits les plus vendus</string>
     <string name="export_csv">Exporter en CSV</string>

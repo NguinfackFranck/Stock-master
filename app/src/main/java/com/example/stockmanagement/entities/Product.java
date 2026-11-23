@@ -24,6 +24,7 @@ public class Product implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private Long id;
     private Double price;
+    private Double buyingPrice;
     private String name;
     private String category;
     private String unit; // "kg", "units", "carton"
@@ -77,6 +78,14 @@ public class Product implements Serializable {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Double getBuyingPrice() {
+        return buyingPrice;
+    }
+
+    public void setBuyingPrice(Double buyingPrice) {
+        this.buyingPrice = buyingPrice;
     }
 
     public String getName() {

@@ -36,6 +36,7 @@ public class ReportActivity extends AppCompatActivity {
 
     private TextView textDateRange;
     private TextView textRevenueThisWeek;
+    private TextView textProfitThisWeek;
     private DailySummaryAdapter dailySummaryAdapter;
     private TopProductAdapter topProductAdapter;
 
@@ -56,6 +57,7 @@ public class ReportActivity extends AppCompatActivity {
 
         textDateRange = findViewById(R.id.text_date_range);
         textRevenueThisWeek = findViewById(R.id.text_revenue_this_week);
+        textProfitThisWeek = findViewById(R.id.text_profit_this_week);
         Button buttonPickFrom = findViewById(R.id.button_pick_from);
         Button buttonPickTo = findViewById(R.id.button_pick_to);
         Button buttonExport = findViewById(R.id.button_export_csv);
@@ -88,6 +90,11 @@ public class ReportActivity extends AppCompatActivity {
                     CurrencyUtils.formatCurrency(this, revenue)));
         });
 
+        viewModel.getProfitThisWeek().observe(this, profit -> {
+            textProfitThisWeek.setText(getString(R.string.net_profit_this_week_format,
+                    CurrencyUtils.formatCurrency(this, profit)));
+        });
+
         viewModel.getIsLoading().observe(this, loading ->
                 findViewById(R.id.progress_report).setVisibility(
                         Boolean.TRUE.equals(loading) ? View.VISIBLE : View.GONE));
@@ -105,10 +112,6 @@ public class ReportActivity extends AppCompatActivity {
         shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
         shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         startActivity(Intent.createChooser(shareIntent, getString(R.string.share_report)));
-
-        // NOTE: exportedCsvUri is a plain MutableLiveData, so on rotation this
-        // observer fires again with the same URI and re-opens the share sheet.
-        // Wrap it in an Event/SingleLiveEvent if that becomes annoying.
     }
 
     private void showDatePicker(Calendar target) {
@@ -150,7 +153,8 @@ public class ReportActivity extends AppCompatActivity {
                     @Override
                     public boolean areContentsTheSame(@NonNull DailySummary oldItem, @NonNull DailySummary newItem) {
                         return oldItem.getTotalQuantity() == newItem.getTotalQuantity()
-                                && oldItem.getTotalRevenue() == newItem.getTotalRevenue();
+                                && oldItem.getTotalRevenue() == newItem.getTotalRevenue()
+                                && oldItem.getTotalProfit() == newItem.getTotalProfit();
                     }
                 };
 
@@ -165,30 +169,34 @@ public class ReportActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull VH holder, int position) {
             DailySummary item = getItem(position);
-            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, MMM d", Locale.getDefault());
+            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, MMM d, yyyy HH:mm", Locale.getDefault());
 
             holder.textDate.setText(item.getDate() != null ? dateFormat.format(item.getDate()) : "");
-            
-            // Show the actual units (e.g. "10 kg, 5 units") instead of just a number
+
             String details = item.getUnitDetails();
             if (details == null || details.isEmpty()) {
                 details = String.valueOf(item.getTotalQuantity());
             }
             holder.textQuantity.setText(details);
 
-            holder.textRevenue.setText(CurrencyUtils.formatCurrency(holder.itemView.getContext(), item.getTotalRevenue()));
+            var context = holder.itemView.getContext();
+            holder.textRevenue.setText(CurrencyUtils.formatCurrency(context, item.getTotalRevenue()));
+            holder.textProfit.setText(context.getString(R.string.net_profit_format,
+                    CurrencyUtils.formatCurrency(context, item.getTotalProfit())));
         }
 
         static class VH extends RecyclerView.ViewHolder {
             final TextView textDate;
             final TextView textQuantity;
             final TextView textRevenue;
+            final TextView textProfit;
 
             VH(@NonNull View itemView) {
                 super(itemView);
                 textDate = itemView.findViewById(R.id.text_summary_date);
                 textQuantity = itemView.findViewById(R.id.text_summary_quantity);
                 textRevenue = itemView.findViewById(R.id.text_summary_revenue);
+                textProfit = itemView.findViewById(R.id.text_summary_profit);
             }
         }
     }
@@ -208,7 +216,8 @@ public class ReportActivity extends AppCompatActivity {
 
                     @Override
                     public boolean areContentsTheSame(@NonNull TopSellingProduct oldItem, @NonNull TopSellingProduct newItem) {
-                        return oldItem.getTotal_sold() == newItem.getTotal_sold();
+                        return oldItem.getTotal_sold() == newItem.getTotal_sold()
+                                && oldItem.getTotal_profit() == newItem.getTotal_profit();
                     }
                 };
 
@@ -226,16 +235,21 @@ public class ReportActivity extends AppCompatActivity {
             holder.textName.setText(item.getName());
             String unit = item.getUnit() != null ? item.getUnit() : holder.itemView.getContext().getString(R.string.hint_unit);
             holder.textTotalSold.setText(String.format(Locale.getDefault(), "%d %s", item.getTotal_sold(), unit));
+
+            var context = holder.itemView.getContext();
+            holder.textProfit.setText(String.format(Locale.getDefault(), "+%s", CurrencyUtils.formatCurrency(context, item.getTotal_profit())));
         }
 
         static class VH extends RecyclerView.ViewHolder {
             final TextView textName;
             final TextView textTotalSold;
+            final TextView textProfit;
 
             VH(@NonNull View itemView) {
                 super(itemView);
                 textName = itemView.findViewById(R.id.text_top_product_name);
                 textTotalSold = itemView.findViewById(R.id.text_top_product_sold);
+                textProfit = itemView.findViewById(R.id.text_top_product_profit);
             }
         }
     }

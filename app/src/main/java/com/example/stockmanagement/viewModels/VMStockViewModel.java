@@ -13,6 +13,7 @@ import com.example.stockmanagement.entities.StockItem;
 import com.example.stockmanagement.enums.StockSortColumn;
 import com.example.stockmanagement.exceptions.InsufficientStockException;
 import com.example.stockmanagement.exceptions.ProductNotFoundException;
+import com.example.stockmanagement.pojos.CartItem;
 import com.example.stockmanagement.pojos.LowStockAlert;
 import com.example.stockmanagement.pojos.ProductWithStock;
 import com.example.stockmanagement.repositories.StockAndSalesRepository;
@@ -75,6 +76,20 @@ public class VMStockViewModel extends ViewModel {
                 }
             });
         }
+    }
+
+    /**
+     * Records a multi-product cart sale transaction asynchronously.
+     */
+    public void recordCartSale(List<CartItem> cartItems, String transactionId) {
+        executor.execute(() -> {
+            try {
+                repository.recordCartSale(cartItems, transactionId);
+                saleSuccess.postValue(true);
+            } catch (ProductNotFoundException | InsufficientStockException | IllegalArgumentException e) {
+                saleError.postValue(e.getMessage());
+            }
+        });
     }
     public int getStockQuantity(long productId) {
         // Since we need it synchronously for the UI hint and it's a simple query

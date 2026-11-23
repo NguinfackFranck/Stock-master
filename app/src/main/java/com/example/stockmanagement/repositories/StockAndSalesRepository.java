@@ -20,6 +20,7 @@ import com.example.stockmanagement.enums.Action;
 import com.example.stockmanagement.enums.StockSortColumn;
 import com.example.stockmanagement.exceptions.InsufficientStockException;
 import com.example.stockmanagement.exceptions.ProductNotFoundException;
+import com.example.stockmanagement.pojos.CartItem;
 import com.example.stockmanagement.pojos.LowStockAlert;
 import com.example.stockmanagement.pojos.ProductWithStock;
 import com.example.stockmanagement.pojos.StockItemDisplay;
@@ -104,7 +105,8 @@ public class StockAndSalesRepository {
                     String.format("Insufficient stock! Requested: %d, Available: %d for product ID: %d",
                             quantity, stockQuantity, productId));}
         // Capture the current price to prevent race conditions
-        var productPrice = product.getPrice();
+        var productPrice = product.getPrice() != null ? product.getPrice() : 0.0;
+        var buyingPrice = product.getBuyingPrice() != null ? product.getBuyingPrice() : 0.0;
         // 2. Deduct from stock
         stockItemDao.adjustStockWithCurrentDate(productId, -quantity);
         // 3. Record the sale
@@ -112,12 +114,67 @@ public class StockAndSalesRepository {
         sale.setProduct_id(productId);
         sale.setQuantity(quantity);
         sale.setUnit_price(productPrice);
+        sale.setBuying_price(buyingPrice);
         double totalPrice = productPrice * quantity;
         sale.setTotal_price(totalPrice);
+        sale.setNet_profit((productPrice - buyingPrice) * quantity);
         saleDao.insertSale(sale);
         // 4. Log both changes for sync
         logSync(TABLE_STOCK_ITEM, productId, Action.UPDATE);
-        logSync(TABLE_SALE, productId, Action.INSERT);}
+        logSync(TABLE_SALE, productId, Action.INSERT);
+    }
+
+    /**
+     * Records a multi-product cart sale transaction.
+     */
+    @Transaction
+    public void recordCartSale(List<CartItem> cartItems, String transactionId)
+            throws ProductNotFoundException, InsufficientStockException {
+        if (cartItems == null || cartItems.isEmpty()) {
+            throw new IllegalArgumentException("Cart cannot be empty");
+        }
+
+        // 1. Validate stock levels for all items first
+        for (CartItem item : cartItems) {
+            Product p = item.getProduct();
+            if (p == null || p.getId() == null) {
+                throw new ProductNotFoundException("Invalid product in cart");
+            }
+            int stock = stockItemDao.getStockQuantityByProduct(p.getId());
+            if (item.getQuantity() > stock) {
+                throw new InsufficientStockException(
+                        String.format("Insufficient stock for %s! Requested: %d, Available: %d",
+                                p.getName(), item.getQuantity(), stock));
+            }
+        }
+
+        // 2. Process all cart items atomically
+        for (CartItem item : cartItems) {
+            Product p = item.getProduct();
+            int qty = item.getQuantity();
+
+            double unitPrice = p.getPrice() != null ? p.getPrice() : 0.0;
+            double buyingPrice = p.getBuyingPrice() != null ? p.getBuyingPrice() : 0.0;
+            double total = unitPrice * qty;
+            double netProfit = (unitPrice - buyingPrice) * qty;
+
+            stockItemDao.adjustStockWithCurrentDate(p.getId(), -qty);
+
+            Sale sale = new Sale();
+            sale.setProduct_id(p.getId());
+            sale.setQuantity(qty);
+            sale.setUnit_price(unitPrice);
+            sale.setBuying_price(buyingPrice);
+            sale.setTotal_price(total);
+            sale.setNet_profit(netProfit);
+            sale.setTransaction_id(transactionId);
+
+            saleDao.insertSale(sale);
+
+            logSync(TABLE_STOCK_ITEM, p.getId(), Action.UPDATE);
+            logSync(TABLE_SALE, p.getId(), Action.INSERT);
+        }
+    }
 
     private void logSync(String tableName, long productId, Action action) {
         var stockLog = new SyncLog();

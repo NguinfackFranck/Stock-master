@@ -80,7 +80,7 @@
                 android:indeterminateTint="@color/brand_emerald"
                 android:visibility="gone" />
 
-            <!-- Revenue hero -->
+            <!-- Revenue & Profit hero -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,6 +103,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/surface" />
+
+                <TextView
+                    android:id="@+id/text_profit_this_week"
+                    style="@style/Text.Mono.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#DFF0EA" />
             </LinearLayout>
 
             <!-- Daily summary -->
